@@ -13,10 +13,10 @@ The data is periodically saved to a JSON file and loaded upon server start and t
     /src
       /app
         /components  - Angular components
-        /services    - Services for API calls and data handling
-        /models      - Data models for users, groups, and channels
-      /assets
-      /environments
+        /account    
+        /chat      - Data models for users, groups, and channels
+      /login       - login and out of the app 
+      /register   - sign user up and remember them in local storage 
       index.html
       main.ts
       app.module.ts
@@ -111,24 +111,14 @@ AppComponent: they contain the main root of the component, and handling layout a
 
 LoginComponent: Allow user to login, logout and store user login data in local storage and give role-base navigation for user. 
 
-GroupComponent: Displays avaiable group, channel and allow admin to create, manage and operate them will full functionality. 
+ChatComponent: Displays avaiable group, channel and allow admin to create, manage and operate them will full functionality. 
 
-UserComponent: They display all the list of user for the Super Admin and allowing them to create and delete users out of the group or channel. 
+RegisterComponent: They allow new user to come and sign in to make new account. 
 
-Service: 
-AuthService: this will handle user login, logout and authentication. - the user will use their local storage for their current loggin data. 
+Account: Hold user current information. 
 
-GroupService: Manage group and and channel creation. 
-They will send API requests to the backend for managing groups and channels. 
+Channel propeties like name, group, and members.
 
-UserService: They will handle user creation and deletion of Super Admins. 
-
-Model: 
-User represents a user with properties like "username", "email", "role", and "group". 
-
-Group represent properties like name, channel, and member 
-
-Channel propeties like name, group, and members. 
 
 6. Local storage Implementation 
 
@@ -142,11 +132,10 @@ Group and Channels: Group and channel are stored in local storage and periodical
 
 
 Additonal information: 
-Known Issue: The project will run and post in VSCode but it will run into issue when the 30 second time out happen due to userline issue i'm trying to resolve. 
-
-- install npm and run cd client because angular json file is in client. 
+Known Issue: 
+ 
 
 run server through node server.js 
 
-cd client then 
+cd chat-system then 
 ng serve to run frontend angular 
